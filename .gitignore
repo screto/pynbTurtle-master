@@ -1,1 +1,4 @@
-
+/build/*
+/dist/*
+/pynbTurtle.egg-infor/*
+/test/*
