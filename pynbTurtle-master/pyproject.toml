@@ -1,0 +1,35 @@
+[project]
+name = "pynbTurtle"
+version = "1.0.1"
+authors = [
+  { name="Reto Schwander", email="reto.schwander@sbl.ch" },
+]
+description = "Ein Turtle-Grafik-Paket für Jupyter-Notebooks"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICENSE*"]
+
+[project.urls]
+Homepage = "https://github.com/pypa/sampleproject"
+Issues = "https://github.com/pypa/sampleproject/issues"
+
+[tool.setuptools]
+# sorgt dafür, dass package_data berücksichtigt wird
+include-package-data = true
+
+[tool.setuptools.package-data]
+"pynbTurtle" = [
+  "static/*.html",
+  "static/*.js",
+]
+
+[build-system]
+requires = ["setuptools>=61.0",
+  "IPython>=9.0",
+]
+build-backend = "setuptools.build_meta"
