@@ -135,15 +135,15 @@
     }
     turtleX = newX; turtleY = newY;
   };
-  window.rotateTurtle    = function(deg)        { turtleAngle += deg; };
-  window.resetTurtle     = function()           {
+  window.rotateTurtle    = function(deg) { turtleAngle += deg; };
+  window.resetTurtle     = function()    {
     turtleX = 200; turtleY = 200; turtleAngle = -90;
     turtleSegments = [];
   };
-  window.penup           = function()           { penIsDown = false; };
-  window.pendown         = function()           { penIsDown = true; };
-  window.setposition     = function(x,y)        { turtleX = x; turtleY = y; };
-  window.setStrokeColor  = function(c)          { strokeColor = c; };
+  window.penup           = function()    { penIsDown = false; };
+  window.pendown         = function()    { penIsDown = true; };
+  window.setposition     = function(x,y) { turtleX = x; turtleY = y; };
+  window.setStrokeColor  = function(c)   { strokeColor = c; };
 </script>
 
 <!-- 5) drawScene() -->
