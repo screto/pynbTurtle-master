@@ -69,11 +69,14 @@ class Turtle:
         """
         lineno = inspect.currentframe().f_back.f_lineno
         self._send_js(f"window.highlightLine('{self._uid}', {lineno});")
-        remaining = int(steps)
-        while remaining > 0:
-            chunk = min(self._step_size, remaining)
-            self._send_js(f"moveTurtle({chunk}, {self.angle});")
-            remaining -= chunk
+        if steps < 0:
+            self.backward(-steps)
+        else:
+            remaining = int(steps)
+            while remaining > 0:
+                chunk = min(self._step_size, remaining)
+                self._send_js(f"moveTurtle({chunk}, {self.angle});")
+                remaining -= chunk
 
     def backward(self, steps):
         """
@@ -84,11 +87,14 @@ class Turtle:
         """
         lineno = inspect.currentframe().f_back.f_lineno
         self._send_js(f"window.highlightLine('{self._uid}', {lineno});")
-        remaining = int(steps)
-        while remaining > 0:
-            chunk = min(self._step_size, remaining)
-            self._send_js(f"moveTurtle({-chunk}, {self.angle});")
-            remaining -= chunk
+        if steps < 0:
+            self.forward(-steps)
+        else:
+            remaining = int(steps)
+            while remaining > 0:
+                chunk = min(self._step_size, remaining)
+                self._send_js(f"moveTurtle({-chunk}, {self.angle});")
+                remaining -= chunk
 
     def left(self, deg):
         """
@@ -198,9 +204,7 @@ class Turtle:
         # Automatisch am Ende der Zelle flushen
         self.flush()
     
-    def show_code(self, mode='play'):
-        self.showcode(mode)
-
+    
     def showcode(self, mode='play'):
         """
         Stelle die zuletzt ausgeführte Notebook-Zelle als Code-Block dar und 
