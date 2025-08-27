@@ -25,7 +25,7 @@ window.highlightLine = function(uid, n) {
 window._turtleFlush = function(cmds_list, delay) {
   window._turtleCommands     = cmds_list.slice();
   window._turtleCommandDelay = delay;
-
+  window._turtlePlay();
 };
 
 // 4) Baut den <pre>…</pre>-Block in den codeContainer für die gegebene UID
